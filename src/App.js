@@ -15,6 +15,7 @@ const App = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalChosen, setModalChosen] = useState(1);
   const [searchChosen, setSearchChosen] = useState('');
+
   const openModal = (idx) => {
     setModalChosen(idx);
     setModalOpen(true);
@@ -38,8 +39,20 @@ const App = () => {
 
   return (
     <div className="App">
-      {modalOpen && <div onClick={() => setModalOpen(false)}><Modal character={allCharacters[modalChosen]} /></div>}
-      <SearchBar allCharacters={allCharacters} setSearchChosen={setSearchChosen} />
+      {modalOpen && (
+      <Flexbox
+        style={{
+          width: '100%',
+          height: '100%',
+          position: 'absolute',
+          justifyContent: 'center',
+        }}
+        onClick={() => setModalOpen(false)}
+      >
+        <Modal character={allCharacters[modalChosen]} />
+      </Flexbox>
+      )}
+      <SearchBar setSearchChosen={setSearchChosen} />
 
       <InfiniteScroll
         dataLength={allCharacters.length}
