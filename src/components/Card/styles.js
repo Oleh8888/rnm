@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const Card = styled.div`
-  width: 20em;
-  height: 10em;
-  max-height: 20vh;
+  width: 30vw;
+  min-width: 330px;
+  height: 21vh;
   border: 2px solid #DADADA;
   border-radius: 30px;
   margin: 10px;
