@@ -4,9 +4,9 @@ import './App.css';
 import axios from 'axios';
 import Flexbox from 'flexbox-react';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import Card from './components/card';
-import Modal from './components/modal';
-import SearchBar from './components/searchBar';
+import Card from './components/Card';
+import Modal from './components/Modal';
+import SearchBar from './components/SearchBar';
 
 const App = () => {
   const [allCharacters, setAllCharacters] = useState([]);
@@ -32,6 +32,7 @@ const App = () => {
       setNumber(number + 1);
     }, 1000);
   };
+
   useEffect(() => {
     load();
     setReady(true);
@@ -72,9 +73,7 @@ const App = () => {
                   openModal(idx);
                 }}
                 >
-                  <Card
-                    character={allCharacters[idx]}
-                  />
+                  <Card character={allCharacters[idx]} />
                 </div>
               );
             }

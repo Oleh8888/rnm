@@ -45,7 +45,6 @@ function Modal(props) {
           {' '}
           {character.location.name}
         </S.InfoItem>
-
         <S.InfoItem>
           Origin:
           {' '}
