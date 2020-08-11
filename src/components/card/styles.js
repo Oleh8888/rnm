@@ -8,6 +8,12 @@ export const Card = styled.div`
   border-radius: 30px;
   margin: 10px;
   background: white;
+  &:hover {
+    background-color: #edebeb;
+  }
+  &:active {
+    background-color: #dadada;
+  }
 `;
 export const Avatar = styled.img`
   width: 20%;

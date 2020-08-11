@@ -14,6 +14,7 @@ function Modal(props) {
             borderRadius: '100px',
             margin: '20px',
           }}
+          onClick={() => console.log(character)}
         />
         <Flexbox flexDirection="column" alignItems="flex-start">
           <div style={{
@@ -22,7 +23,6 @@ function Modal(props) {
           >
             {' '}
             <b>{character.name}</b>
-
           </div>
           <div>
             {' '}
@@ -32,11 +32,36 @@ function Modal(props) {
             {' '}
             {character.gender}
           </div>
+
+          <div>
+            {' '}
+            {character.episodes}
+          </div>
         </Flexbox>
       </Flexbox>
-      Location:
-      {' '}
-      {character.location.name}
+      <Flexbox flexDirection="column" flexWrap="wrap">
+        <S.InfoItem>
+          Location:
+          {' '}
+          {character.location.name}
+        </S.InfoItem>
+
+        <S.InfoItem>
+          Origin:
+          {' '}
+          {character.origin.name}
+        </S.InfoItem>
+        <S.InfoItem>
+          Episodes:
+          {' '}
+          {character.episode.length}
+        </S.InfoItem>
+        <S.InfoItem>
+          Created:
+          {' '}
+          {character.created.substring(0, 10).replace(/-/gi, '.')}
+        </S.InfoItem>
+      </Flexbox>
     </S.Modal>
   );
 }
